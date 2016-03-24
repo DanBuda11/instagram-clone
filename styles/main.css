@@ -1,9 +1,22 @@
 header {
 	background-color: #446b99;
+	line-height: 3em;
+}
+
+.headerBox {
+	background-color: #446b99;
+	width: 70%;
+	margin: 0 auto;
+	text-align: left;
 }
 
 .headerButton {
+	margin-left: -0.8em;
+}
 
+i {
+	vertical-align: middle;
+	color: #082238;
 }
 
 .outerShell {
@@ -12,6 +25,15 @@ header {
 
 .innerShell {
 	background-color: #e0e1e2;
+	padding-bottom: 1em;
+}
+
+.postBox {
+	width: 70%;
+	border: 2px solid #c9c8c7;
+	margin: 0 auto 2em auto;
+	border-radius: 0 0 5px 5px;
+	box-shadow: 5px 5px 15px -5px #c3c3c3, 0 5px 15px -5px #c3c3c3, -5px 5px 15px -5px #c3c3c3;
 }
 
 .imgBox {
@@ -19,13 +41,35 @@ header {
 }
 
 img {
-
+	width: 100%;
+	height: auto;
+	display: block;
 }
 
 .captionBox {
-
+	background-color: #fafafa;
+	padding: 2em;
+	border-radius: 0 0 5px 5px;
 }
 
 p {
+	color: #77797f;
+	margin: 0;
+}
 
+@media (min-width: 600px) {
+	.innerShell {
+		border-left: solid 2px #cecfd0;
+		border-right: solid 2px #cecfd0;
+		margin: 0 auto;
+		width: 67.33%;
+	}
+
+	.headerBox {
+		width: 80%;
+	}
+
+	.postBox {
+		width: 80%;
+	}
 }
