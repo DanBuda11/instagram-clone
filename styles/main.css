@@ -24,6 +24,7 @@ a i {
 	background-color: #fff;
 	border-bottom: solid 2px #cecfd0;
 	overflow: hidden;
+	display: none;
 }
 
 .inputText {
@@ -103,7 +104,7 @@ img {
 	border-radius: 0 0 5px 5px;
 }
 
-p {
+.caption {
 	color: #77797f;
 	margin: 0;
 }
