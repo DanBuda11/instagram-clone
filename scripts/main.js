@@ -4,6 +4,7 @@
 // Set up an error function that prints something to the website screen and not just a console.log
 
 // Initial variable settings
+var collectionUrl = 'http://small-tiyfe.herokuapp.com/collections/danstagram/';
 var inputUrl = $('.inputUrl');
 var inputCaption = $('.inputCaption');
 var noUrl = $('.urlErr');
@@ -51,7 +52,7 @@ var dataGet = function(data) {
 
 // GET request setup
 var getResults = {
-	url: 'http://small-tiyfe.herokuapp.com/collections/danstagram',
+	url: collectionUrl,
 	type: 'get',
 	dataType: 'json',
 	success: dataGet,
@@ -67,27 +68,6 @@ $.ajax(getResults);
 $('form').submit(function(e) {
 	e.preventDefault();
 	var entry;
-	// This is showing that the value of entry is undefined
-	console.log('the value of entry is: ' + entry);
-	var dataPost = function(data) {
-		var json_data = JSON.stringify(data);
-		console.log(json_data);
-		entry.push(data);
-
-
-		$('#get-results').html('');
-		$.ajax(getResults);
-	}
-	var postResults = {
-	url: 'http://small-tiyfe.herokuapp.com/collections/danstagram',
-	type: 'post',
-	data: entry,
-	dataType: 'html',
-	success: dataPost,
-	error: function(err) {
-		console.log('Error! Error!');
-		}
-	};
 	if (inputUrl.val().toLowerCase().startsWith('http://') || inputUrl.val().toLowerCase().startsWith('https://')) {
 		noUrl.html('');
 		if (inputCaption.val() === '') {
@@ -95,15 +75,22 @@ $('form').submit(function(e) {
 			return;
 		} else {
 			entry = {
-				image: inputUrl.val(),
-				caption: inputCaption.val()
+				image: inputUrl.val,
+				caption: inputCaption.val
 			};
-    		$.ajax(postResults);
+    		$.ajax({
+    			url: collectionUrl,
+    			type: 'post',
+    			data: entry,
+    			dataType: 'json'
+    		});
     		$('.inputForm').slideUp();
 			$('.inputUrl').val('');
     		$('.inputCaption').val('');
     		$('.urlErr').val('');
     		$('.captionErr').val('');
+    		$('#get-results').html('');
+    		$.ajax(getResults);
 		}		
 	} else {
 		noUrl.html('Please enter a valid URL.');
