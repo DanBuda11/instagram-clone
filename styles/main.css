@@ -75,6 +75,20 @@ span {
 	vertical-align: middle;
 }
 
+.urlErr {
+	color: red;
+	font-size: 0.7em;
+	margin: 0 auto;
+	width: 90%;
+}
+
+.captionErr {
+	color: red;
+	font-size: 0.7em;
+	margin: 0 auto 0.5em auto;
+	width: 90%;
+}
+
 .outerShell {
 	background-color: #edeeef;
 }
@@ -115,6 +129,12 @@ img {
 	}
 	.inputForm {
 		padding: 1.5em 0;
+	}
+	.urlErr {
+		width: 70%;
+	}
+	.captionErr {
+		width: 70%;
 	}
 	.buttons {
 		width: 18em;
