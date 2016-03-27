@@ -4,7 +4,6 @@
 // Set up an error function that prints something to the website screen and not just a console.log
 
 // Initial variable settings
-var collectionUrl = 'http://small-tiyfe.herokuapp.com/collections/danstagram/';
 var inputUrl = $('.inputUrl');
 var inputCaption = $('.inputCaption');
 var noUrl = $('.urlErr');
@@ -52,7 +51,7 @@ var dataGet = function(data) {
 
 // GET request setup
 var getResults = {
-	url: collectionUrl,
+	url: 'http://small-tiyfe.herokuapp.com/collections/danstagram',
 	type: 'get',
 	dataType: 'json',
 	success: dataGet,
@@ -75,11 +74,11 @@ $('form').submit(function(e) {
 			return;
 		} else {
 			entry = {
-				image: inputUrl.val,
-				caption: inputCaption.val
+				image: inputUrl.val(),
+				caption: inputCaption.val()
 			};
     		$.ajax({
-    			url: collectionUrl,
+    			url: 'http://small-tiyfe.herokuapp.com/collections/danstagram',
     			type: 'post',
     			data: entry,
     			dataType: 'json'
