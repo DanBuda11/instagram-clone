@@ -8,3 +8,7 @@ Built Using
 * JavaScript
 * jQuery
 * AJAX
+
+Visit the [Live Link]
+
+[Live Link]: http://instagramclone-danbuda.surge.sh/
